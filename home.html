@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<h2>User List</h2>
+<ul>
+    {% for user in users %}
+        <li>{{ user }}</li>
+    {% endfor %}
+</ul>
+
+<h2>User Info</h2>
+<ul>
+    <li>Name: {{ info.name }}</li>
+    <li>Age: {{ info.age }}</li>
+    <li>Location: {{ info.location }}</li>
+</ul>
+
+<h2>Login Status</h2>
+{% if logged_in %}
+    <p>You are logged in.</p>
+{% else %}
+    <p>Please log in.</p>
+{% endif %}
+{% endblock %}
